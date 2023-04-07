@@ -6,6 +6,7 @@ unit DarkModeApi;
 
 interface
 
+// See https://github.com/chuacw/Delphi-Dark-Mode-demo
 // See also https://github.com/adzm/win32-custom-menubar-aero-theme
 
 uses
