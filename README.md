@@ -15,3 +15,5 @@ begin
   {$ENDIF}
 end;
 ```
+
+![Preview](https://github.com/HemulGM/WindowDarkMode/blob/main/preview.png?raw=true)
