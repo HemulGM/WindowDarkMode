@@ -122,11 +122,12 @@ function IsDarkMode: Boolean;
 var
   LRegistry: TRegistry;
 begin
+  Result := False;
   LRegistry := TRegistry.Create;
   try
     LRegistry.RootKey := HKEY_CURRENT_USER;
-    LRegistry.OpenKeyReadOnly('\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize');
-    Result := not LRegistry.ReadBool('AppsUseLightTheme');
+    if LRegistry.OpenKeyReadOnly('\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize') then
+      Result := not LRegistry.ReadBool('AppsUseLightTheme');
   finally
     LRegistry.Free;
   end;
