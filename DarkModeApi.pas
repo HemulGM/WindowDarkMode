@@ -123,13 +123,17 @@ var
   LRegistry: TRegistry;
 begin
   Result := False;
-  LRegistry := TRegistry.Create;
   try
-    LRegistry.RootKey := HKEY_CURRENT_USER;
-    if LRegistry.OpenKeyReadOnly('\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize') then
-      Result := not LRegistry.ReadBool('AppsUseLightTheme');
-  finally
-    LRegistry.Free;
+    LRegistry := TRegistry.Create;
+    try
+      LRegistry.RootKey := HKEY_CURRENT_USER;
+      if LRegistry.OpenKeyReadOnly('\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize') then
+        Result := not LRegistry.ReadBool('AppsUseLightTheme');
+    finally
+      LRegistry.Free;
+    end;
+  except
+    Result := False;
   end;
 end;
 

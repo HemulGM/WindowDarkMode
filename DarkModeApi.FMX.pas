@@ -50,17 +50,29 @@ end;
 
 procedure TFormHelper.SetWindowColorMode(IsDark: Boolean);
 begin
-  SetWindowColorModeFor(handle, IsDark);
+  try
+    SetWindowColorModeFor(handle, IsDark);
+  except
+    //
+  end;
 end;
 
 procedure TFormHelper.SetWindowColorModeAsSystem;
 begin
-  SetWindowColorModeAsSystemFor(Handle);
+  try
+    SetWindowColorModeAsSystemFor(Handle);
+  except
+    //
+  end;
 end;
 
 class function TFormHelper.SystemIsDarkMode: Boolean;
 begin
-  Result := IsDarkMode;
+  try
+    Result := IsDarkMode;
+  except
+    Result := False;
+  end;
 end;
 
 {$ELSE}
