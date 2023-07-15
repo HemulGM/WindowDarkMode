@@ -11,7 +11,7 @@ const
   BackColor: TColor = $1E1E1E;
   TextColor: TColor = $F0F0F0;
   InputBackColor: TColor = $303030;
-  Dwmapi = 'DWMAPI.DLL';
+  Dwmapi = 'dwmapi.dll';
   CDarkModeExplorer = 'DarkMode_Explorer';
   CModeExplorer = 'Explorer';
   CDarkModeControlCFD = 'DarkMode_CFD';
